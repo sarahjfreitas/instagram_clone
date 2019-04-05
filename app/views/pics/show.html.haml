@@ -1,0 +1,10 @@
+%p
+  %strong Title:
+  = @pic.title
+%p
+  %strong Description:
+  = @pic.description
+
+= link_to 'Edit', edit_pic_path(@pic)
+|
+= link_to 'Back', pics_path

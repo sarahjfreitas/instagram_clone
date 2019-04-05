@@ -1,0 +1,23 @@
+= form_with(model: pic, local: true) do |form|
+  - if pic.errors.any?
+    #errors
+      %h2= pluralize(pic.errors.count, "error") + ' prohibited this pic from being saved:'
+      %ul
+        - pic.errors.full_messages.each do |message|
+          %li= message  
+
+  .row
+    .form-group.col-md-12  
+      = form.label :title
+      = form.text_field :title, class: 'form-control'
+  
+  .row
+    .form-group.col-md-12  
+      = form.label :description
+      = form.text_area :description, class: 'form-control'
+  
+
+  .actions
+    = form.submit class: 'btn btn-primary'
+  
+
